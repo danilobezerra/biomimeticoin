@@ -430,11 +430,13 @@ int main() {
                 index = TILE_USERINDEX;
 
                 // Draw images, prepare palettes, start music
-                VDP_drawImageEx(BG_B, &title, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, index), 4, 4, FALSE, TRUE);
+                VDP_drawImageEx(BG_B, &title, TILE_ATTR_FULL(PAL0, FALSE, FALSE, FALSE, index), 1, 2, FALSE, TRUE);
                 memcpy(&mainPalette[0], title.palette->data, 16);
 
-                VDP_drawText("GGJ 2022 - Baixada Santista", 6, 25);
-                VDP_drawText("Dan's Headquarters", 11, 26);
+                VDP_drawText("GGJ 2022 - Baixada Santista", 6, 22);
+                VDP_drawText(" Programming by Danilo ", 8, 24);
+                VDP_drawText("Game Design by Mitzrael", 8, 25);
+                VDP_drawText("   Art by Thaynara     ", 8, 26);
 
                 // TODO: Credits
 
