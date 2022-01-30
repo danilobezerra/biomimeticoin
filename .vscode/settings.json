@@ -4,5 +4,8 @@
         "${env:GDK}\\res",
         "res",
         "inc"
-    ]
+    ],
+    "files.associations": {
+        "genesis.h": "c"
+    }
 }

@@ -1,56 +1,68 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-    "version": "0.1.0",
+    "version": "2.0.0",
     "command": "cmd",
-    "isShellCommand": true,
     "args": [
         "/C"
     ],
-    "showOutput": "always",
     "tasks": [
         {
-            "isBuildCommand": true,
-            "suppressTaskName": true,
-            "echoCommand": true,
-            "taskName": "debug",
+            "label": "debug",
+            "type": "shell",
+            "command": "cmd",
             "args": [
+                "/C",
                 "${env:GDK}\\bin\\make",
                 "-f",
                 "${env:GDK}\\makefile.gen",
                 "debug"
-            ]
+            ],
+            "problemMatcher": [],
+            "group": {
+                "_id": "build",
+                "isDefault": false
+            }
         },
         {
-            "suppressTaskName": true,
-            "echoCommand": true,
-            "taskName": "release",
+            "label": "release",
+            "type": "shell",
+            "command": "cmd",
             "args": [
+                "/C",
                 "${env:GDK}\\bin\\make",
                 "-f",
                 "${env:GDK}\\makefile.gen"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
-            "suppressTaskName": true,
-            "echoCommand": true,
-            "taskName": "clean",
+            "label": "clean",
+            "type": "shell",
+            "command": "cmd",
             "args": [
+                "/C",
                 "${env:GDK}\\bin\\make",
                 "clean",
                 "-f",
                 "${env:GDK}\\makefile.gen"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
-            "isTestCommand": true,
-            "suppressTaskName": true,
-            "echoCommand": true,
-            "taskName": "run",
+            "label": "run",
+            "type": "shell",
+            "command": "cmd",
             "args": [
+                "/C",
                 "${env:GENS}\\gens.exe",
                 "${workspaceRoot}\\out\\rom.bin"
-            ]
+            ],
+            "problemMatcher": [],
+            "group": {
+                "_id": "test",
+                "isDefault": false
+            }
         }
     ]
 }
